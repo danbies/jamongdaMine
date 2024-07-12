@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jamongda.login.dao.LoginGuestDAO">
+	<resultMap type="loginDTO" id="loginguResult"></resultMap>
+	<select id="loginCheck" parameterType="loginDTO" resultType="loginDTO">
+ 		select * from member_tbl
+ 		<where>
+ 			email=#{email} and pwd=#{pwd}
+ 		</where>
+ 	</select>
+ 	
+</mapper>
